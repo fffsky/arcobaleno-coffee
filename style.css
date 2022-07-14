@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 0.9rem;
+  /* background-color: rgb(247,230,212,0.8); */
+  margin: 0;
+  padding: 0;
+}
+a {
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+/******************************************************
+common
+******************************************************/
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px 0 40px;
+}
+.wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-title{
+  margin: 40px 50px 80px ;
+  font-family: 'Dancing Script', cursive;
+  font-size: 5.0rem;
+  font-weight: 100;
+  position: relative;
+}
+.section-title:after {
+  position: absolute;
+  top:50%;
+  border-top: 2px solid #666666;
+  content: "";
+  width: 50%;
+  margin-left: 10px;
+}
+.section-title-odd{
+  margin: 40px 45px 75px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 5.0rem;
+  font-weight: 100;
+  position: relative;
+  text-align: end;
+}
+.section-title-odd:before {
+  position: absolute;
+  top:50%;
+  border-top: 2px solid #666666;
+  content: "";
+  width: 50%;
+  margin-right: 20px;
+  right: 11%;
+}
+/******************************************************
+link
+******************************************************/
+.link{
+  text-align: center;
+  margin: 90px auto 50px;
+  font-size: 2.0rem;
+}
+.link a{
+  padding: 10px 30px;
+  border-radius: 15px;
+  border: #666666 1px solid;
+  text-decoration: none;
+  color: #666666;
+}
+/******************************************************
+header
+******************************************************/
+header {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 3;
+}
+.menu-flex {
+  align-items: center;
+  font-size: 2.0rem;
+  width: 100%;
+}
+.menu-list li{
+    margin: 0 15px;
+}
+/******************************************************
+Fv
+******************************************************/
+#fv{
+  position: relative;
+  width: 100%;
+  height:100vh;
+  font-size: 0;
+}
+.fv1{
+  width: 100%;
+  height:100vh;
+  object-fit: cover;
+}
+h1{
+  position: absolute;
+  bottom: 18%;
+  left: 5%;
+  font-size: 9rem;
+  font-family: 'Dancing Script', cursive;
+  color: sienna;
+  z-index: 10;
+}
+/* 営業時間コメント */
+.open{
+  position: absolute;
+  bottom: 9%;
+  left: 20%;
+  font-size: 3rem;
+  font-family: 'Dancing Script', cursive;
+  color: sienna;
+  z-index: 10;
+}
+/* 背景白 */
+.white{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:
+  linear-gradient(to bottom left, transparent 50% , rgb(255,255,255,0.8) 50%);
+}
+/******************************************************
+ハンバーガーメニュー
+******************************************************/
+nav {
+  display: block;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: -300px;
+  bottom: 0%;
+  transition: all 0.5s;
+  z-index: 3;
+  opacity: 0;
+}
+.open nav{
+  left: 0;
+  opacity: 1;
+  width: 40%;
+}
+.open .menu-flex{
+}
+nav .inner {
+  padding: 25px;
+  width: 100%;
+  margin-top: 100px;
+}
+nav .inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav .inner ul li {
+  margin: 30px auto;
+  border-bottom: 1px solid #333;
+  text-align: center;
+  width: 50%;
+}
+nav .inner ul li a {
+  display: block;
+  width: 220px;
+  text-decoration: none;
+  color: #333;
+  padding: 1rem;
+  transition-duration: 0.2s;
+  font-size: 4rem;
+  margin: 0 auto;
+}
+nav .inner ul li a:hover {
+  background-color: #e4e4e4;
+}
+.toggle-btn {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 63px;
+  height: 48px;
+  z-index: 3;
+  cursor: pointer;
+  z-index: 9999;
+  background: chocolate;
+}
+.toggle-btn span {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 45px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+.toggle-btn span:nth-child(1) {
+  top: 12px;
+  margin-left: 8px;
+}
+.toggle-btn span:nth-child(2) {
+  top: 22px;
+  margin-left: 8px;
+}
+.toggle-btn span:nth-child(3) {
+  bottom: 12px;
+  margin-left: 8px;
+}
+.open .toggle-btn span{
+  background-color: #fff;
+}
+.open .toggle-btn span:nth-child(1){
+  transform: translateY(10px)  rotate(-315deg);
+}
+.open .toggle-btn span:nth-child(2){
+  opacity: 0;
+}
+.open .toggle-btn span:nth-child(3){
+  transform: translateY(-10px)  rotate(315deg);}
+#mask {
+  display: none;
+  transition: all 0.5s;
+}
+
+.open #mask {
+  display: block;
+  background-color: #666666;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.8;
+  cursor: pointer;
+}
+/******************************************************
+New
+******************************************************/
+.new-item{
+  display: flex;
+  margin-bottom: 80px;
+}
+.new1 img{
+  width: 55%;
+  margin: 0 auto;
+  border: 3px whitesmoke solid;
+}
+.new2 img{
+  width: 80%;
+  margin: 0 auto;
+}
+.new-item-img,.new-item-txt{
+width: 50%;
+}
+h4{
+  position: relative;
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 20px;
+}
+.new-item-img{
+  position: relative;
+  text-align: center;
+}
+.new-item-img:after {
+  position: absolute;
+  right: 3%;
+  top: 2%;
+  border-top: 2px solid #666666;
+  content: "New";
+  width: 27%;
+  margin-left: 10px;
+  background-color: red;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-family: 'Dancing Script', cursive;
+  border-top: white 8px solid;
+  border-bottom: white 8px solid;
+}
+.new-detail{
+  width: 85%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+.new-price{
+  text-align: end;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  font-size: 2.0rem;
+}
+/******************************************************
+Topic
+******************************************************/
+.topic-img{
+  width: 20%;
+  text-align: end;
+}
+.topic-img img{
+  height: 100%;
+  border: whitesmoke 0.5px solid;
+  border-right:0px ;
+  width: 100%;
+}
+.topic-txt{
+  width: 80%;
+  font-size: 1.8rem;
+  border: whitesmoke 0.5px solid;
+  /* padding: 20px; */
+  height: 100%;
+  display: table;
+}
+.topic-txt p{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 20px;
+}
+/******************************************************
+News
+******************************************************/
+.news-list{
+  display: flex;
+  font-size: 1.8rem;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.news-list p{
+  margin-right: 20px;
+}
+.news-list:last-child{
+  margin-bottom: 0px;
+}
+.news-wrapper{
+  border-top: 4px solid #edcba8;
+  width: 60%;
+  padding: 30px 0;
+  border-bottom: 4px solid #edcba8;
+  background-color: rgb(237,203,168,0.6);
+}
+/******************************************************
+Goods
+******************************************************/
+.goods-wrapper{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.goods-item{
+  width: 24%;
+}
+.goods-txt{
+  font-size: 2.0rem;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 100;
+}
+.goods-img{
+  width: 80%;
+  margin: 0 auto;
+}
+.goods-img img{
+  border-radius: 15px;
+  border: 1px solid whitesmoke;
+}
+/******************************************************
+Contact
+******************************************************/
+#contact{
+  background-image: url(img/contact.jpg);
+  background-color:rgba(255,255,255,0.3);
+  background-blend-mode:lighten;
+}
+form{
+  font-size:  1.6rem;
+  margin:0 auto;
+  width: 500px;
+}
+input,textarea{
+  border: whitesmoke 4px solid;
+}
+input{
+  height: 40px;
+  width: 500px;
+  margin-bottom: 25px;
+  background-color: rgba(255,255,255,1.0);
+  background-blend-mode: lighten;
+}
+textarea{
+  height: 300px;
+  width: 500px;
+  background-color: rgba(255,255,255,1.0);
+  background-blend-mode: lighten;
+}
+/******************************************************
+Footer
+******************************************************/
+footer{
+	background-color: #edcba8;
+	width: 100%;
+}
+.topic-item{
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  height: 113px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  box-shadow: 10px 10px 10px 10px rgb(227 227 227);
+}
+.sns-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.sns-icon li{
+	margin: 0 10px;
+}
+.sns-icon img {
+	width: 40px;
+	margin: 50px 0 20px;
+	border: 1px whitesmoke solid;
+	border-radius: 50%;
+}
+.copyright{
+	text-align: center;
+	padding: 20px 0;
+	font-size: 1.3rem;
+}
