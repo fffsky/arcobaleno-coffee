@@ -264,9 +264,7 @@ New
   width: 80%;
   margin: 0 auto;
 }
-.new-item-img,.new-item-txt{
-width: 50%;
-}
+.new-item-img,.new-item-txt{width: 50%;}
 h4{
   position: relative;
   text-align: center;
@@ -321,9 +319,9 @@ Topic
 .topic-txt{
   width: 80%;
   font-size: 1.8rem;
-  border: whitesmoke 0.5px solid;
+  /* border: whitesmoke 0.5px solid; */
   /* padding: 20px; */
-  height: 100%;
+  /* height: 100%; */
   display: table;
 }
 .topic-txt p{
@@ -359,11 +357,14 @@ Goods
 ******************************************************/
 .goods-wrapper{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  /* flex-direction: row; */
+  width: 100%;
 }
 .goods-item{
-  width: 24%;
+  width: 30%;
+  box-sizing: border-box;
 }
 .goods-txt{
   font-size: 2.0rem;
@@ -384,27 +385,28 @@ Contact
 ******************************************************/
 #contact{
   background-image: url(img/contact.jpg);
-  background-color:rgba(255,255,255,0.3);
-  background-blend-mode:lighten;
+  background-color: rgba(255,255,255,0.3);
+  background-blend-mode:
+  lighten;
 }
 form{
   font-size:  1.6rem;
   margin:0 auto;
-  width: 500px;
+  width: 50%;
 }
 input,textarea{
   border: whitesmoke 4px solid;
 }
 input{
-  height: 40px;
-  width: 500px;
+  height: 100%;
+  width: 100%;
   margin-bottom: 25px;
   background-color: rgba(255,255,255,1.0);
   background-blend-mode: lighten;
 }
 textarea{
   height: 300px;
-  width: 500px;
+  width: 100%;
   background-color: rgba(255,255,255,1.0);
   background-blend-mode: lighten;
 }
@@ -418,10 +420,9 @@ footer{
 .topic-item{
   display: flex;
   justify-content: center;
-  width: 75%;
-  height: 113px;
+  width: 80%;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
   box-shadow: 10px 10px 10px 10px rgb(227 227 227);
 }
 .sns-icon {
@@ -442,4 +443,76 @@ footer{
 	text-align: center;
 	padding: 20px 0;
 	font-size: 1.3rem;
+}
+/******************************************************
+レスポンシブ対応
+******************************************************/
+@media screen and (max-width:960px){
+
+  .new-item{
+    flex-direction: column;
+  }
+  .new-item-img{
+    width: 80%;
+    margin: 0 auto;
+    order: 1;
+  }
+  .new-item-img, .new-item-txt{
+    margin: 0 auto;
+    width: 100%;
+  }
+  .new1 img{
+    width: 75%;
+}
+.topic-item{
+  flex-direction: column;
+  box-shadow: none;
+  margin-bottom: 90px;
+}
+.news-list{
+  flex-direction: column;
+}
+.news-wrapper{
+  width: 80%;
+}
+.news-list{
+  width: 90%;
+}
+form{
+  width: 80%;
+}
+.section-title{
+  
+margin: 40px 30px 35px;
+}
+.topic-img{
+width: 50%;
+margin: 0 auto;
+
+}
+
+.topic-txt{margin: 0 auto;margin-top: 47px;width: 85%;}
+
+
+.new-item-txt{
+  order: 2;
+}
+.new-item-img:after{
+  
+right: 10%;
+}
+.goods-txt{
+  font-size: 1.6rem;
+}
+.goods-item{
+  margin-bottom: 40px;
+}
+.topic-txt p{
+  padding: 0;
+}
+}
+@media screen and (max-width:400px){
+h1{
+    font-size: 7rem;
+}
 }
