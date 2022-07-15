@@ -193,8 +193,8 @@ nav .inner ul li a:hover {
 .toggle-btn {
   display: block;
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 5%;
+  right: 5%;
   width: 63px;
   height: 48px;
   z-index: 3;
@@ -511,6 +511,7 @@ footer{
   }
   .new-item-img:after{
     right: 10%;
+    top: 0%;
   }
   .new1 img{
     width: 75%;
