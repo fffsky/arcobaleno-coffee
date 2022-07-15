@@ -11,9 +11,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <!-- CDNでjQueryを動かせるようにする -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         <!-- css -->
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -54,7 +59,7 @@
                 <h3 class="section-title">New</h3>
                 <div class="wrapper">
                     <!-- 商品1 -->
-                    <div class="new-item">
+                    <div class="new-item slider-left">
                         <div class="new-item-img new1">
                             <img src="img/new1.jpg">
                         </div>
@@ -67,7 +72,7 @@
                         </div>
                     </div>
                     <!-- 商品2 -->
-                    <div class="new-item">
+                    <div class="new-item slider-right">
                         <div class="new-item-txt">
                             <h4>新商品名</h4>
                             <div class="new-detail2">
@@ -92,7 +97,7 @@
                     <h3 class="section-title">Topic</h3>
                     <div class="wrapper">
                         <!-- トピック1 -->
-                        <div class="topic-item">
+                        <div class="topic-item slider-bottom">
                             <div class="topic-img">
                                 <img src="img/topic2.jpg">
                             </div>
@@ -104,7 +109,7 @@
                             </div>
                         </div>
                         <!-- トピック2 -->
-                        <div class="topic-item">
+                        <div class="topic-item slider-bottom">
                             <div class="topic-img">
                                 <img src="img/topic1.jpg">
                             </div>
@@ -116,7 +121,7 @@
                             </div>
                         </div>
                         <!-- トピック3 -->
-                        <div class="topic-item">
+                        <div class="topic-item slider-bottom">
                             <div class="topic-img">
                                 <img src="img/topic3.jpg">
                             </div>
@@ -128,7 +133,7 @@
                             </div>
                         </div>
                         <!-- トピック4 -->
-                        <div class="topic-item">
+                        <div class="topic-item slider-bottom">
                             <div class="topic-img">
                                 <img src="img/topic4.jpg">
                             </div>
@@ -196,16 +201,16 @@
                             <!-- 商品3 -->
                             <div class="goods-item">
                                 <div class="goods-img">
-                                    <img src="img/goods3.jpg">
+                                    <img src="img/goods7.jpg">
                                 </div>
                                 <div class="goods-txt">
-                                    <h5>コーヒー豆<br>￥680-</h5>
+                                    <h5>タンブラー<br>￥620-</h5>
                                 </div>
                             </div>
                             <!-- 商品4 -->
                             <div class="goods-item">
                                 <div class="goods-img">
-                                    <img src="img/topic4.jpg">
+                                    <img src="img/goods3.jpg">
                                 </div>
                                 <div class="goods-txt">
                                     <h5>コーヒー豆<br>￥680-</h5>
@@ -214,10 +219,10 @@
                             <!-- 商品5 -->
                             <div class="goods-item">
                                 <div class="goods-img">
-                                    <img src="img/goods5.jpg">
+                                    <img src="img/topic4.jpg">
                                 </div>
                                 <div class="goods-txt">
-                                    <h5>オリジナルノート<br>￥250-</h5>
+                                    <h5>コーヒー豆<br>￥680-</h5>
                                 </div>
                             </div>
                             <!-- 商品6 -->
@@ -232,19 +237,19 @@
                             <!-- 商品7 -->
                             <div class="goods-item">
                                 <div class="goods-img">
-                                    <img src="img/goods7.jpg">
+                                    <img src="img/goods8.jpg">
                                 </div>
                                 <div class="goods-txt">
-                                    <h5>タンブラー<br>￥620-</h5>
+                                    <h5>紅茶<br>￥420-</h5>
                                 </div>
                             </div>
                             <!-- 商品8 -->
                             <div class="goods-item">
                                 <div class="goods-img">
-                                    <img src="img/goods8.jpg">
+                                    <img src="img/goods5.jpg">
                                 </div>
                                 <div class="goods-txt">
-                                    <h5>紅茶<br>￥420-</h5>
+                                    <h5>オリジナルノート<br>￥250-</h5>
                                 </div>
                             </div>
                         </div>
@@ -273,8 +278,60 @@
                     </div>
             </section>
         </main>
-        <!-- ハンバーガーメニューJS -->
-        <script src="hambuger.js"></script>
+        <script>
+            // ハンバーガーメニュー
+            let nav = document.querySelector("#navArea");
+            let inner = document.querySelector(".inner");
+            let btn = document.querySelector(".toggle-btn");
+            let mask = document.querySelector("#mask");
+
+            btn.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+            inner.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+            mask.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+            // アニメション
+            $(function () {
+                $(window).scroll(function () {
+                    const windowHeight = $(window).height();
+                    const scroll = $(window).scrollTop();
+                        $('.slider-bottom').each(function () {
+                            const targetPosition = $(this).offset().top;
+                                if (scroll > targetPosition - windowHeight + 100) {
+                                    $(this).addClass("is-fadein");
+                                }
+                        });
+                });
+            });
+            $(function () {
+                $(window).scroll(function () {
+                    const windowHeight = $(window).height();
+                    const scroll = $(window).scrollTop();
+                        $('.slider-left').each(function () {
+                            const targetPosition = $(this).offset().top;
+                                if (scroll > targetPosition - windowHeight + 100) {
+                                    $(this).addClass("is-fadein");
+                                }
+                        });
+                });
+            });
+            $(function () {
+                $(window).scroll(function () {
+                    const windowHeight = $(window).height();
+                    const scroll = $(window).scrollTop();
+                        $('.slider-right').each(function () {
+                            const targetPosition = $(this).offset().top;
+                                if (scroll > targetPosition - windowHeight + 100) {
+                                    $(this).addClass("is-fadein");
+                                }
+                        });
+                });
+            });
+        </script>
     </body>
     <footer>
         <div class="footer-container">
