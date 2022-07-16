@@ -329,14 +329,10 @@ Topic
   border: whitesmoke 0.5px solid;
   border-right:0px ;
   width: 100%;
-  box-shadow: 10px 10px 10px 10px rgb(227 227 227);
 }
 .topic-txt{
   width: 80%;
   font-size: 1.8rem;
-  /* border: whitesmoke 0.5px solid; */
-  /* padding: 20px; */
-  /* height: 100%; */
   display: table;
 }
 .topic-txt p{
@@ -545,18 +541,23 @@ footer{
     flex-direction: column;
     box-shadow: none;
     margin-bottom: 90px;
+    width: 100%;
   }
   .topic-img{
     width: 50%;
     margin: 0 auto;
   }
+  .topic-img img{
+    box-shadow: 10px 10px 10px 10px rgb(227 227 227);
+    width: 100%;
+  }
   .topic-txt{
     margin: 0 auto;
-    margin-top: 47px;
-    width: 85%;
+    margin-top: 50px;
+    width: 50%;
   }
   .topic-txt p{
-    padding: 0;
+  padding: 0;
   }
   /* news */
   .news-wrapper{
