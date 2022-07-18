@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Arcobaleno coffee</title>
+        <meta name="description" content="心地よい空間とおいしいコーヒーを提供します。">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <!-- GoogleFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <!-- CDNでjQueryを動かせるようにする -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- ハンバーガーメニュー -->
+        <header id="navArea">
+            <nav>
+                <div class="inner">
+                    <ul class="menu-flex">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="access.html">Access</a></li>
+                        <li><a href="goods.html">Goods</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="mask"></div>
+        </header>
+        <!-- アクセス -->
+        <section id="access">
+            <div class="container">
+                <h3 class="section-title">Access</h3>
+                    <div class="wrapper access-wrapper">
+                        <div class="address">
+                            <p>住所：埼玉県新座市東北4-683-8</p>
+                            <p>電話番号：012-345-678</p>
+                            <p>駅から徒歩5分</p>
+                            <p>駐車場5台あり(近くにパーキングあり)</p>
+                        </div>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3235.846703486407!2d139.55430621555325!3d35.80369653085261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e83864a34c77%3A0x5389b1c82fab6f9a!2z5paw5bqn6aeF!5e0!3m2!1sja!2sjp!4v1658156382052!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <script>
+            // ハンバーガーメニュー
+            let nav = document.querySelector("#navArea");
+            let inner = document.querySelector(".inner");
+            let btn = document.querySelector(".toggle-btn");
+            let mask = document.querySelector("#mask");
+
+            btn.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+            inner.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+            mask.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+        </script>
+    </body>
+    <footer>
+        <div class="footer-container">
+            <!-- snsアイコン -->
+            <ul class="sns-icon">
+                <li><img src="img/icon-line.png" alt="snsアイコン"></li>
+                <li><img src="img/icon-instagram.png" alt="snsアイコン"></li>
+                <li><img src="img/icon-tiktok.png" alt="snsアイコン"></li>
+            </ul>
+            <div class="copyright">&copy;Arcobaleno inc.</div>
+        </div>
+    </footer>
+</html>

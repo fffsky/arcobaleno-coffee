@@ -376,11 +376,14 @@ Goods
 .goods-item{
   width: 30%;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 .goods-txt{
-  font-size: 2.0rem;
   margin: 20px 0;
   text-align: center;
+}
+.goods-txt h5{
+  font-size: 1.6rem;
   font-weight: 100;
 }
 .goods-img{
@@ -429,6 +432,57 @@ textarea{
   font-size: 2.0rem;
   border-radius: 15px;
 }
+
+/******************************************************
+Access
+******************************************************/
+.address{
+  width: 80%;
+  margin: 0 auto 40px;
+}
+.address p{
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.map{
+  width: 80%;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+/******************************************************
+Menu
+******************************************************/
+#menu{
+  background-image: url(img/menu.jpg);
+  background-position: center center;
+  background-color:rgba(255,255,255,0.9);
+  background-blend-mode:lighten;
+	text-align:center;
+	padding:15px 0;
+}
+.menu-wrapper{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+.menu-list{
+  margin: 0 80px;
+}
+.menu-title{
+  font-size: 3.0rem;
+  border-bottom: 1px solid #000;
+  display: inline-block;
+}
+.menu th, .menu td{
+  font-size: 2.6rem;
+  padding: 25px;
+  /* width: 100px; */
+  text-align: center;
+}
+.menu tr{
+  padding-bottom: 10px;
+}
+
 /******************************************************
 Footer
 ******************************************************/
@@ -598,6 +652,31 @@ footer{
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
+  }
+  /* Access */
+  .address{
+    width: 80%;
+    margin: 0 auto 40px;
+  }
+  .address p{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .map{
+    width: 80%;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  iframe{
+  width: 95%;
+  }
+  /* menu */
+  .menu-wrapper{
+    flex-direction: column;
+    width: 80%;
+  }
+  .menu-list{
+    margin: 0 0 80px;
   }
 }
 @media screen and (max-width: 675px){

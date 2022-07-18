@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Arcobaleno coffee</title>
+        <meta name="description" content="心地よい空間とおいしいコーヒーを提供します。">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+        <!-- GoogleFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <!-- CDNでjQueryを動かせるようにする -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- ハンバーガーメニュー -->
+        <header id="navArea">
+            <nav>
+                <div class="inner">
+                    <ul class="menu-flex">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="access.html">Access</a></li>
+                        <li><a href="goods.html">Goods</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="mask"></div>
+        </header>
+        <!-- アクセス -->
+        <section id="menu">
+            <div class="container">
+                <h3 class="section-title">Menu</h3>
+                    <div class="wrapper menu-wrapper">
+                        <div class="menu-list">
+                            <p class="menu-title">Drink</p>
+                            <table  class="menu">
+                                <tr>
+                                    <th>商品名</th>
+                                    <th>価格(円)</th>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="menu-list">
+                            <p class="menu-title">Food</p>
+                            <table  class="menu">
+                                <tr>
+                                    <th>商品名</th>
+                                    <th>価格(円)</th>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                                <tr>
+                                    <td>商品名</td>
+                                    <td>300</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <script>
+            // ハンバーガーメニュー
+            let nav = document.querySelector("#navArea");
+            let inner = document.querySelector(".inner");
+            let btn = document.querySelector(".toggle-btn");
+            let mask = document.querySelector("#mask");
+
+            btn.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+            inner.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+            mask.onclick = () =>{
+                nav.classList.toggle("open");
+            };
+        </script>
+    </body>
+    <footer>
+        <div class="footer-container">
+            <!-- snsアイコン -->
+            <ul class="sns-icon">
+                <li><img src="img/icon-line.png" alt="snsアイコン"></li>
+                <li><img src="img/icon-instagram.png" alt="snsアイコン"></li>
+                <li><img src="img/icon-tiktok.png" alt="snsアイコン"></li>
+            </ul>
+            <div class="copyright">&copy;Arcobaleno inc.</div>
+        </div>
+    </footer>
+</html>
