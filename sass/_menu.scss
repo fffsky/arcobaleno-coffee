@@ -1,0 +1,49 @@
+@mixin sp-960{
+    @media(max-width:960px){
+        @content;
+    }
+}
+/******************************************************
+Menu
+******************************************************/
+#menu{
+    background-image: url(img/menu.jpg);
+    background-position: center center;
+    background-color:rgba(255,255,255,0.9);
+    background-blend-mode:lighten;
+    padding:15px 0;
+    .menu-wrapper{
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        @include sp-960{
+            flex-direction: column;
+            width: 80%;
+        }
+        .menu-list{
+            margin: 0 80px;
+            @include sp-960{
+                margin: 0 0 80px;
+            }
+            .menu-title{
+                font-size: 3.0rem;
+                font-weight: bold;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+    th{
+        font-size: 2.6rem;
+        padding: 25px;
+        text-align: center;
+    }
+    td{
+        font-size: 2.6rem;
+        padding: 25px;
+        text-align: center;
+    }
+    tr{
+        padding-bottom: 10px;
+    }
+}

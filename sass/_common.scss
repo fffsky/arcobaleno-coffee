@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    color: #666666;
+}
+img {
+    max-width: 100%;
+}
+li {
+    list-style: none;
+}
+
+@mixin sp-960{
+    @media(max-width:960px){
+        @content;
+    }
+}
+@mixin sp-675{
+    @media(max-width:675px){
+        @content;
+    }
+}
+/******************************************************
+common
+******************************************************/
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px 0 40px;
+    @include sp-960{
+        padding: 10px 0 10px;
+    }
+    .section-title{
+        margin: 40px 50px 80px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 5.0rem;
+        font-weight: 100;
+        position: relative;
+        @include sp-960{
+            margin: 40px 30px 35px;
+        }
+        &:after {
+            position: absolute;
+            top:50%;
+            border-top: 2px solid #666666;
+            content: "";
+            width: 50%;
+            margin-left: 10px;
+        }
+    }
+    .wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    }
+}
+/******************************************************
+link
+******************************************************/
+.link{
+    text-align: center;
+    margin: 65px auto 50px;
+    font-size: 2.0rem;
+    a{
+        padding: 10px 30px;
+        border-radius: 15px;
+        border: #666666 1px solid;
+        text-decoration: none;
+        color: #666666;
+    }
+}
+/******************************************************
+sp
+******************************************************/
+.sp{
+    @include sp-675{
+        display: block;
+    }
+}
