@@ -121,6 +121,11 @@ nav .inner ul li a {
   margin: 0 auto;
   border-bottom: 1px solid #333;
 }
+@media (max-width: 675px) {
+  nav .inner ul li a {
+    font-size: 1.8rem;
+  }
+}
 nav .inner ul li a:hover {
   background-color: #e4e4e4;
 }
@@ -597,10 +602,17 @@ footer .copyright {
 /******************************************************
 アニメーション
 ******************************************************/
-.slider-left, .slider-right {
+.slider-left {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(100px);
+  transform: translateX(150px);
+  transition: opacity 2s, visibility 2s, transform 2s;
+}
+
+.slider-right {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-150px);
   transition: opacity 2s, visibility 2s, transform 2s;
 }
 

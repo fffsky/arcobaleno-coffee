@@ -34,7 +34,7 @@
                         <li><a href="menu.html">Menu</a></li>
                         <li><a href="access.html">Access</a></li>
                         <li><a href="goods.html">Goods</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -62,23 +62,8 @@
                     </div>
             </div>
         </section>
-        <script>
-            // ハンバーガーメニュー
-            let nav = document.querySelector("#navArea");
-            let inner = document.querySelector(".inner");
-            let btn = document.querySelector(".toggle-btn");
-            let mask = document.querySelector("#mask");
-
-            btn.onclick = () =>{
-                nav.classList.toggle("open");
-            };
-            inner.onclick = () =>{
-                nav.classList.toggle("open");
-            };
-            mask.onclick = () =>{
-                nav.classList.toggle("open");
-            };
-        </script>
+        <script src="js/hambuger.js"></script>
+        <script src="js/animation.js"></script>
     </body>
     <footer>
         <div class="footer-container">

@@ -43,6 +43,9 @@ nav {
                     font-size: 4rem;
                     margin: 0 auto;
                     border-bottom: 1px solid #333;
+                    @include sp-675{
+                        font-size: 1.8rem;
+                    }
                     &:hover {
                         background-color: #e4e4e4;
                     }
@@ -466,10 +469,16 @@ footer{
 /******************************************************
 アニメーション
 ******************************************************/
-.slider-left,.slider-right{
+.slider-left{
     opacity: 0;
     visibility: hidden;
-    transform: translateY(100px);
+    transform: translateX(150px);
+    transition: opacity 2s, visibility 2s, transform 2s;
+}
+.slider-right{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-150px);
     transition: opacity 2s, visibility 2s, transform 2s;
 }
 .is-fadein {

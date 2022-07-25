@@ -62,7 +62,7 @@
                     <h3 class="section-title">New</h3>
                     <div class="wrapper">
                         <!-- 商品1 -->
-                        <div class="new-item slider-left">
+                        <div class="new-item slider-right">
                             <div class="new-item-img new1">
                                 <img class="new-item-img1" src="img/new1.jpg">
                             </div>
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <!-- 商品2 -->
-                        <div class="new-item slider-right">
+                        <div class="new-item slider-left">
                             <div class="new-item-txt">
                                 <h4>新商品名</h4>
                                 <div class="new-detail">
@@ -282,60 +282,8 @@
                     </div>
             </section>
         </main>
-        <script>
-            // ハンバーガーメニュー
-            let nav = document.querySelector("#navArea");
-            let inner = document.querySelector(".inner");
-            let btn = document.querySelector(".toggle-btn");
-            let mask = document.querySelector("#mask");
-
-            btn.onclick = () =>{
-                nav.classList.toggle("open");
-            };
-            inner.onclick = () =>{
-                nav.classList.toggle("open");
-            };
-            mask.onclick = () =>{
-                nav.classList.toggle("open");
-            };
-            // アニメション
-            $(function () {
-                $(window).scroll(function () {
-                    const windowHeight = $(window).height();
-                    const scroll = $(window).scrollTop();
-                        $('.slider-bottom').each(function () {
-                            const targetPosition = $(this).offset().top;
-                                if (scroll > targetPosition - windowHeight + 100) {
-                                    $(this).addClass("is-fadein");
-                                }
-                        });
-                });
-            });
-            $(function () {
-                $(window).scroll(function () {
-                    const windowHeight = $(window).height();
-                    const scroll = $(window).scrollTop();
-                        $('.slider-left').each(function () {
-                            const targetPosition = $(this).offset().top;
-                                if (scroll > targetPosition - windowHeight + 100) {
-                                    $(this).addClass("is-fadein");
-                                }
-                        });
-                });
-            });
-            $(function () {
-                $(window).scroll(function () {
-                    const windowHeight = $(window).height();
-                    const scroll = $(window).scrollTop();
-                        $('.slider-right').each(function () {
-                            const targetPosition = $(this).offset().top;
-                                if (scroll > targetPosition - windowHeight + 100) {
-                                    $(this).addClass("is-fadein");
-                                }
-                        });
-                });
-            });
-        </script>
+        <script src="js/hambuger.js"></script>
+        <script src="js/animation.js"></script>
     </body>
     <footer>
         <div class="footer-container">
