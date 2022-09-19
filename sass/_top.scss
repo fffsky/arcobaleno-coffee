@@ -8,6 +8,11 @@
         @content;
     }
 }
+@mixin sp-450{
+    @media(max-width:450px){
+        @content;
+    }
+}
 /******************************************************
 ハンバーガーメニュー
 ******************************************************/
@@ -74,8 +79,8 @@ nav {
     position: fixed;
     top: 5%;
     right: 5%;
-    width: 63px;
-    height: 48px;
+    width: 45px;
+    height: 39px;
     z-index: 3;
     cursor: pointer;
     z-index: 9999;
@@ -84,21 +89,21 @@ nav {
         position: absolute;
         display: block;
         left: 0;
-        width: 45px;
+        width: 30px;
         height: 2px;
         background-color: #fff;
         transition: all 0.5s;
         border-radius: 4px;
         &:nth-child(1) {
-            top: 12px;
+            top: 11px;
             margin-left: 8px;
         }
         &:nth-child(2) {
-            top: 22px;
+            top: 19px;
             margin-left: 8px;
         }
         &:nth-child(3) {
-            bottom: 12px;
+            top: 27px;
             margin-left: 8px;
         }
     }
@@ -112,12 +117,21 @@ nav {
 }
 .open .toggle-btn span:nth-child(1){
     transform: translateY(10px)  rotate(-315deg);
+    margin-left: 9px;
+    width: 28px;
+    margin-top: 0px;
+    top: 9px;
 }
 .open .toggle-btn span:nth-child(2){
     opacity: 0;
 }
 .open .toggle-btn span:nth-child(3){
-    transform: translateY(-10px)  rotate(315deg);}
+    transform: translateY(-10px)  rotate(315deg);
+    margin-left: 7px;
+    width: 28px;
+    margin-top: 3px;
+    top: 26px;
+}
 .open #mask {
     display: block;
     background-color: #666666;
@@ -137,47 +151,103 @@ Top
     width: 100%;
     height:100vh;
     font-size: 0;
-    img{
-        width: 100%;
-        height:100vh;
+
+    .fv-img img{
+        position: absolute;
+        width: 50%;
+        height: 63%;
         object-fit: cover;
+        left: 65%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        @include sp-960{
+            width: 65%;
+            height: 55%;
+            left: 59%;
+            top: 41%;
+        }
+        @include sp-450{
+            width: 100%;
+            height: 60%;
+            left: 0%;
+            top: 0%;
+            transform: translate(0,0);
+        }
     }
     /* 背景白 */
     .white{
-        width: 100%;
-        height: 100vh;
+        width: 50%;
+        height: 50%;
         position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        background: linear-gradient(to bottom left, transparent 50% , rgb(255,255,255,0.8) 50%);
+        top: 74%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        background:#a0522d;
+        z-index: -1;
+        @include sp-960{
+            width: 64%;
+            height: 35%;
+            top: 81%;
+            left: 37%;
+        }
+        @include sp-450{
+            width: 100%;
+            height: 24%;
+            left: 0%;
+            top: 60%;
+            transform: translate(0, 0);
+}
         h1{
             position: absolute;
-            bottom: 18%;
+            top: 18%;
             left: 5%;
-            font-size: 9rem;
+            font-size: 6rem;
             font-family: 'Dancing Script', cursive;
-            color: sienna;
+            color: #fff;
             z-index: 10;
             @include sp-960{
-                font-size: 8rem;
+                top: 30%;
+                font-size: 5rem;
             }
             @include sp-675{
-                font-size: 6rem;
+                font-size: 4rem;
             }
         }
         /* 営業時間 */
         .open{
             position: absolute;
             bottom: 9%;
-            left: 20%;
+            left: 40%;
             font-size: 3rem;
             font-family: 'Dancing Script', cursive;
-            color: sienna;
+            color: #fff;
             z-index: 10;
         }
     }
+
+    .fv-icon{
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        @include sp-450{
+            display: none;
+        }
+        img{
+            width: 33px;
+            height: 33px;
+            margin: 10px;
+            display: block;
+
+        }
+        &-list{
+                display: flex;
+            @include sp-960{
+                flex-direction: column;
+            }
+        }
+    }
 }
+
 /********************************************
 New
 *********************************************/
@@ -220,10 +290,11 @@ New
         }
         &1{
             width: 55%;
-            margin: 0 auto 0 0;
+            margin: 0 auto 0;
             border: 3px whitesmoke solid;
             @include sp-960{
-                width: 75%;
+                margin: 0 auto;
+                width: 40%;
             }
         }
         &2{
