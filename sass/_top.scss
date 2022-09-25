@@ -78,7 +78,7 @@ nav {
     display: block;
     position: fixed;
     top: 5%;
-    right: 5%;
+    right: 8%;
     width: 45px;
     height: 39px;
     z-index: 3;
@@ -154,17 +154,16 @@ Top
 
     .fv-img img{
         position: absolute;
-        width: 50%;
-        height: 63%;
+        width: 65%;
+        height: 75%;
         object-fit: cover;
-        left: 65%;
-        top: 45%;
-        transform: translate(-50%, -50%);
+        right: 0;
+        top: 0;
         @include sp-960{
-            width: 65%;
+            width: 80%;
             height: 55%;
-            left: 59%;
-            top: 41%;
+            right: 0;
+            top: 0%;
         }
         @include sp-450{
             width: 100%;
@@ -179,16 +178,15 @@ Top
         width: 50%;
         height: 50%;
         position: absolute;
-        top: 74%;
-        left: 30%;
-        transform: translate(-50%, -50%);
-        background:#a0522d;
+        bottom: 0;
+        left: 0;
+        background: #a0522d;
         z-index: -1;
         @include sp-960{
             width: 64%;
             height: 35%;
-            top: 81%;
-            left: 37%;
+            top: 44%;
+            left: 0%;
         }
         @include sp-450{
             width: 100%;
@@ -199,14 +197,14 @@ Top
 }
         h1{
             position: absolute;
-            top: 18%;
+            top: 51%;
             left: 5%;
             font-size: 6rem;
             font-family: 'Dancing Script', cursive;
             color: #fff;
             z-index: 10;
             @include sp-960{
-                top: 30%;
+                top: 50%;
                 font-size: 5rem;
             }
             @include sp-675{
@@ -227,22 +225,28 @@ Top
 
     .fv-icon{
         position: absolute;
-        top: 25%;
-        left: 10%;
+        top: 85%;
+        left: 64%;
+        @include sp-960{
+            top: 66%;
+            left: 66%;
+        }
         @include sp-450{
             display: none;
         }
         img{
             width: 33px;
             height: 33px;
-            margin: 10px;
+            margin: 12px;
             display: block;
-
+            @include sp-960{
+                margin: 10px;
+            }
         }
         &-list{
                 display: flex;
             @include sp-960{
-                flex-direction: column;
+
             }
         }
     }
