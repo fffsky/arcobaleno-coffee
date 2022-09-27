@@ -22,11 +22,17 @@ li {
         @content;
     }
 }
-@mixin sp-675{
+@mixin sp-650{
     @media(max-width:675px){
         @content;
     }
 }
+@mixin sp-450{
+    @media(max-width:450px){
+        @content;
+    }
+}
+
 /******************************************************
 common
 ******************************************************/
@@ -80,7 +86,15 @@ link
 sp
 ******************************************************/
 .sp{
-    @include sp-675{
+    display: none;
+    @include sp-650{
         display: block;
     }
 }
+.pc{
+    display: block;
+    @include sp-650{
+        display: none;
+    }
+}
+
